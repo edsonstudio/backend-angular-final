@@ -42,10 +42,13 @@ namespace DevIO.Api.Configuration
                 options.AddPolicy("Production",
                     builder =>
                         builder
-                            .WithMethods("GET")
-                            .WithOrigins("http://desenvolvedor.io")
-                            .SetIsOriginAllowedToAllowWildcardSubdomains()
-                            .AllowAnyHeader());
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+                //.WithMethods("GET")
+                //.WithOrigins("http://desenvolvedor.io")
+                //.SetIsOriginAllowedToAllowWildcardSubdomains()
+                //.AllowAnyHeader());
             });
 
             return services;
